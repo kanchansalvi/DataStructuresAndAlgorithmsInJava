@@ -29,6 +29,7 @@ public class MyLinkedList {
 		final Node newN = new Node(num);
 		
 		Node lastNode = getLastNode();
+		
 		if(lastNode == null){//empty LL
 			head = newN;
 		}else{
