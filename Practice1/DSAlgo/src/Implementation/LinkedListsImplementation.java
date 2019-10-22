@@ -17,51 +17,35 @@ public class LinkedListsImplementation {
 		head = null;
 	}
 	
-//	Adding an node to the list
+//	Adding a node to the list
 	
 	public void addNode(SingleLLNode nodeToAdd) {
 		
-		if(head == null) {
-			head = nodeToAdd;
+		SingleLLNode node = head;
+		
+		if(node == null) {
+			node = nodeToAdd;
+			head = node;
 		}
 		else {
-			while(head.getNext() != null) {
-			head =  head.getNext();
+			while(node.getNext() != null) {
+				node =  node.getNext();
 			}
 			
-			 head.setNext(nodeToAdd);
-		}
-		System.out.println("Node added : " +nodeToAdd.getData());
+			node.setNext(nodeToAdd);
+		}		
 	}
 	
 //	Remove the last node:
-//	1) Check if the head of list is empty
-//	  a) If the head is empty goto:(2) else goto:(3)
-//	2) Print that the list is empty
-//	3) Create a currentNode to store the current head node.
-//	4) Check if the next of the node is empty
-//		a) if next of the head is empty goto:(5) else goto:(6)
-//	5) Make the next of the currentNode to null.
-//	6) Assign currentNode the value of head node.
-//	7) Move the head to the next node.
-//	8) Repeat the steps(4) - (7) until head is not null
-
-	/*
-	 * 1) null list
-	 * 2) 2
-	 */
-	public void RemoveLast() {
+	
+public void RemoveLast() {
 		
-		SingleLLNode prevNode = head;
+		SingleLLNode prevNode = null;
 		SingleLLNode node = head;
 		if(node == null) {
 			System.out.println("List is empty");
+			return;
 		}
-		
-		else {
-			
-			if(node.getNext()==null)
-				node = null;
 			
 			while(node.getNext() != null) {
 				
@@ -69,26 +53,57 @@ public class LinkedListsImplementation {
 				    node = node.getNext();
 			}
 			prevNode.setNext(null);
-		}
-		displayList();
 	}
 	
 /*
 * Remove the Second Last node from the List 
-* 1) Create a previous node and set it to null
-* 2) If the list has single node -> return
-* 3) Do this until the head reaches the last node
-* 	 a) 
-* 
 */
-	
+public void removeSecondLastNode() {
+	SingleLLNode node = head;
+	SingleLLNode prevNode = null;
+	SingleLLNode secPrevNode = null;
+	if(node == null || node.getNext() == null) {
+		return;
+	}
+//	else {
+	while(node.getNext() != null) {
+		secPrevNode = prevNode;
+		prevNode = node;
+		node = node.getNext();
+	}
+	secPrevNode.setNext(prevNode.getNext()) ;
+//	}
+}
 /*
 * Remove the first Element from the list: 
 * 1) Move the head to the next node
 */
 	
 public void removeFirst() {
+	if(head == null) { 
+		return;
+	}
 	head = head.getNext();
+}
+
+//Search a value in the LL 
+public void searchLL(int val) {
+	
+	SingleLLNode node = head;
+	if(head == null) {
+		System.out.println("Empty List");
+		return;
+	}
+	
+	while(node != null) {
+		if(node.getData() == val) {
+			System.out.println("Value Found");	
+			return;
+		}
+		node = node.getNext();
+		if(node.getNext() == null && node.getData() != val)
+				System.out.println("Value Not Found");
+	}
 }
 
 /*
@@ -103,7 +118,7 @@ public void removeFirst() {
 public void displayList() {
 	SingleLLNode node = head;
 	while(node != null) {
-		System.out.println(node.getData());
+		System.out.print(node.getData() + " ");
 		node = node.getNext();
 	}
 }
