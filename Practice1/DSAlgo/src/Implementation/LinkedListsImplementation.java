@@ -100,10 +100,42 @@ public void searchLL(int val) {
 			System.out.println("Value Found");	
 			return;
 		}
-		node = node.getNext();
-		if(node.getNext() == null && node.getData() != val)
-				System.out.println("Value Not Found");
+		else
+			node = node.getNext();
 	}
+	System.out.println("Value Not Found");
+}
+
+//Finding the middle node in the list
+public void midNode() {
+	SingleLLNode midNode = head;
+	SingleLLNode node = head;
+	int counter = 0;
+	
+	if(node == null) {
+		System.out.println("Empty List");
+		return;
+		}
+	
+	while(node != null) {
+		counter++;
+		node = node.getNext();
+		if((counter%2)!=0 && (counter!=1)) {midNode=midNode.getNext();}
+	}
+	System.out.println("MidNode = " + midNode.getData());
+}
+
+//Count the no. of node in the list
+public int listSize() {
+	SingleLLNode node = head;
+    int counter=0;
+	
+	while(node != null) {
+		counter++;
+		node = node.getNext();
+	}
+	System.out.println("Size of List : " + counter);
+	return counter;
 }
 
 /*

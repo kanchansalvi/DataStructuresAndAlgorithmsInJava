@@ -29,8 +29,8 @@ public class LinkedListsPS {
 		myll.addNode(sl4);
 		SingleLLNode sl5 = new SingleLLNode(15);
 		myll.addNode(sl5);
-		SingleLLNode sl6 = new SingleLLNode(18);
-		myll.addNode(sl6);
+//		SingleLLNode sl6 = new SingleLLNode(18);
+//		myll.addNode(sl6);
 		System.out.println("\nList after adding node : ");
 		myll.displayList();
 		System.out.println("\nList after removing last node :" );
@@ -44,6 +44,9 @@ public class LinkedListsPS {
 		myll.displayList();
 		System.out.println("\nSearching for value in the list :" );
 		myll.searchLL(15);
+		System.out.println("\nMidnode:");
+		myll.midNode();
+		myll.listSize();
 		
 	}
 
