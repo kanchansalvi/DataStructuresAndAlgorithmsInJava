@@ -155,4 +155,32 @@ public void displayList() {
 	}
 }
 
+//Swap 2 nodes at a time
+public void swapNodes() {
+	SingleLLNode myNode = head;
+	
+	if(myNode == null || myNode.getNext() == null) {
+		return;
+	}
+	
+	while(myNode != null && myNode.getNext() != null) {
+		
+		swap(myNode, myNode.getNext());
+		
+		myNode = myNode.getNext().getNext();
+	}
+}
+
+public void swap(SingleLLNode node1, SingleLLNode node2) {
+	int temp1;
+	
+	temp1 = node1.getData();
+	node1.setData(node2.getData());
+	node2.setData(temp1);
+}
+
+//Inserting node at nth place
+public void nInsert() {
+	
+}
 }

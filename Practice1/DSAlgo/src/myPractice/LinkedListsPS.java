@@ -48,6 +48,12 @@ public class LinkedListsPS {
 		myll.midNode();
 		myll.listSize();
 		
+		System.out.println("\nSwap 2 nodes at a time");
+		myll.swapNodes();
+		myll.displayList();
+		
+		System.out.println("\nInserting node at nth place");
+		
 	}
 
 }
