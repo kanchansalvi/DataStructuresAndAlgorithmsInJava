@@ -1,5 +1,6 @@
 package myPractice;
 
+import ArraysImplementation.ArraysImplement;
 public class ArraysPS {
 	
 	public static void main(String[] args) {
@@ -23,6 +24,9 @@ public class ArraysPS {
 		for(int i=0; i<arrs.length; i++) {
 			System.out.print("   arrs[" +i+ "]=" +arrs[i]);
 		}
+		
+		System.out.println("Printing Integer Array in Reverse");
+		reverseArray();
 	}
 
 }
