@@ -60,12 +60,41 @@ public void transposeMat(int arr[][]) {
 			transMat[i][j] = arr[j][i];
 			System.out.println("transMat["+i+"]["+j+"]="+ transMat[i][j]);
 		}
-	}
+	}	
+}
+
+//Change entire row and column to zero if the element in that row or column is zero
+// Not working
+public void zeroMat(int arr[][]) {
 	
+	 int zeromat[][] = new int[arr.length][arr[0].length];
+	 	zeromat = arr;
+	 	
+	 	printArray(zeromat);
+	for(int i=0; i<arr.length; i++) {
+		for(int j=0; j<arr[0].length; j++) {
+			System.out.print(" arr = " + arr[i][j] + " zero = " + zeromat[i][j]);
+			if(arr[i][j] == 0) {
+				System.out.println("In if");
+				zeromat=changeZeroMat(i,j, zeromat);
+			}
+			
+		}
+	}
+	printArray(zeromat);
+}
+
+public int[][] changeZeroMat(int row, int col, int zeromat[][]) {
+	for(int k=0; k<zeromat.length; k++) {
+		zeromat[k][col] = 0;
+	}
+	for(int k=0; k<zeromat[0].length; k++) {
+		zeromat[row][k] = 0;
+	}
+	return zeromat;
 }
 	
 //Print the square 2D Matrix in spiral manner
-	
 	public void spiralMat(int arr1[][]) {
 		
 //		int arr[][] = {{1,2,3,4},

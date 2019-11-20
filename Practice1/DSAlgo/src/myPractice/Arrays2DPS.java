@@ -9,15 +9,16 @@ public class Arrays2DPS {
 		
 		int arr[][] = {{1,2,3,4},
 					   {5,6,7,8},
-					   {9,10,11,12},
+					   {0,10,11,12},
 					   {13,14,15,16}};
 		
 		 Arrays2DImplement arr2D = new Arrays2DImplement();
-		arr2D.printArray(arr);
-		arr2D.spiralMat(arr);
-		arr2D.addMat(arr,arr);
-		arr2D.printDiag(arr);
-		arr2D.transposeMat(arr);
+//		arr2D.printArray(arr);
+//		arr2D.spiralMat(arr);
+//		arr2D.addMat(arr,arr);
+//		arr2D.printDiag(arr);
+//		arr2D.transposeMat(arr);
+		arr2D.zeroMat(arr);
 	}
 
 }
