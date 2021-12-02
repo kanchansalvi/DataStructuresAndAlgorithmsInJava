@@ -18,7 +18,7 @@ public class mentor_Oct12 {
 		// TODO Auto-generated method stub
      String str = "My name    isss Deepkanchan";
      //System.out.print(str+"\n");
-     getArray1(str);
+     //getArray1(str);
      String str2 = "str1 str2 str3                   str4 str5 str7 str8 str9 str10 str11 str12 str13 str14 str15 str16 str17 str18 str19";
      print10Lines(str2);
 	}
